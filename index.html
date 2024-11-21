@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>AgentSearchLeads ROI Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: right;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        .roi {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ROI Calculator</h1>
+        <form id="roiForm">
+            <div class="input-group">
+                <label for="leadsPerMonth">Number of Leads Per Month:</label>
+                <input type="number" id="leadsPerMonth" min="1" required>
+            </div>
+            <div class="input-group">
+                <label for="remarketingPlan">Remarketing Plan:</label>
+                <select id="remarketingPlan">
+                    <option value="0">No Remarketing</option>
+                    <option value="4">Social Media Only</option>
+                    <option value="7">Social and Google</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="avgHomeSalePrice">Average Home Sale Price ($):</label>
+                <input type="number" id="avgHomeSalePrice" value="300000" step="1000">
+            </div>
+            <div class="input-group">
+                <label for="commissionRate">Average Commission Rate (%):</label>
+                <input type="number" id="commissionRate" value="2.6" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Does your brokerage charge a franchise fee?</label>
+                <select id="franchiseFeeToggle" onchange="toggleFranchiseFee()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="input-group" id="franchiseFeeInput" style="display: none;">
+                <label for="franchiseFee">Franchise Fee (%):</label>
+                <input type="number" id="franchiseFee" value="0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Does your brokerage have an annual cap?</label>
+                <select id="annualCapToggle" onchange="toggleAnnualCap()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="input-group" id="annualCapInput" style="display: none;">
+                <label for="annualCap">Annual Cap ($):</label>
+                <input type="number" id="annualCap" value="0" step="100">
+            </div>
+            <div class="input-group">
+                <label for="commissionSplit">Agent Commission Split (%):</label>
+                <input type="number" id="commissionSplit" value="70" step="1">
+            </div>
+            <div class="input-group">
+                <label>Are you utilizing an ISA?</label>
+                <select id="isaToggle" onchange="toggleISA()">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="input-group" id="isaInput" style="display: none;">
+                <label for="isaBudget">Monthly ISA Budget ($):</label>
+                <input type="number" id="isaBudget" value="0" step="1">
+            </div>
+            <div class="input-group">
+                <label for="transactionFee">Transaction Fee ($):</label>
+                <input type="number" id="transactionFee" value="0" step="1">
+            </div>
+            <div class="input-group">
+                <label for="monthlyFees">Additional Monthly Fees ($):</label>
+                <input type="number" id="monthlyFees" value="0" step="1">
+            </div>
+            <button type="button" onclick="calculateROI()">Calculate ROI</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        /* Place your JavaScript code here */
+    </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
